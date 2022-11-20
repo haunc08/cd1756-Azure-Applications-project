@@ -132,7 +132,7 @@ def _load_cache():
 
 
 def _save_cache(cache):
-    if cache.has_state_changed:
+    if cache and cache.has_state_changed:
         session["token_cache"] = cache.serialize()
 
 
