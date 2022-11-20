@@ -87,15 +87,11 @@ def login():
 # Its absolute URL must match your app's redirect_uri set in AAD
 @app.route(Config.REDIRECT_PATH)
 def authorized():
-    logging.info(request.args)
     if request.args.get('state') != session.get("state"):
-        logging.info('state')
         return redirect(url_for("home"))  # No-OP. Goes back to Index page
     if "error" in request.args:  # Authentication/Authorization failure
-        logging.info('error')
         return render_template("auth_error.html", result=request.args)
     if request.args.get('code'):
-        logging.info('code')
         cache = _load_cache()
         result = _build_msal_app(cache=cache).acquire_token_by_authorization_code(
             request.args['code'],
@@ -103,7 +99,6 @@ def authorized():
             redirect_uri=url_for("authorized", _external=True, _scheme="https")
         )
         if "error" in result:
-            logging.info('error result')
             return render_template("auth_error.html", result=result)
         session["user"] = result.get("id_token_claims")
         # Note: In a real app, we'd use the 'name' property from session["user"] below
