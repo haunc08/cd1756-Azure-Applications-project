@@ -8,7 +8,7 @@ class Config(object):
 
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'haunc3udacitystorage1'
     BLOB_STORAGE_KEY = os.environ.get(
-        'BLOB_STORAGE_KEY') or '1ApYiC86nz9cuu+fO+RdPO1eKYJLJlVmlv2j4Ikh6t1s11D6VcGAWjuiXri4k9XQSDDJBKPhjM9n+ASt+2/k4g=='
+        'BLOB_STORAGE_KEY') or 'blob-storage-key'
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get(
