@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/34451b6e-2270-4001-a4b8-74fa4e4a39ca/AppServices/subscriptions/34451b6e-2270-4001-a4b8-74fa4e4a39ca/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/hau-udacity-flask-1",
+  "appService.deploySubpath": "."
+}
